@@ -38,8 +38,12 @@ import PathFixesProvider from './generic/path-fixes';
 import LiveTab from './course-home/live-tab/LiveTab';
 import CourseAccessErrorPage from './generic/CourseAccessErrorPage';
 
+import "./c1-theme/main.scss";
+
+
 subscribe(APP_READY, () => {
   ReactDOM.render(
+    <div id="c1-edx">
     <AppProvider store={initializeStore()}>
       <Helmet>
         <link rel="shortcut icon" href={getConfig().FAVICON_URL} type="image/x-icon" />
@@ -103,7 +107,8 @@ subscribe(APP_READY, () => {
           </UserMessagesProvider>
         </NoticesProvider>
       </PathFixesProvider>
-    </AppProvider>,
+    </AppProvider>
+    </div>,
     document.getElementById('root'),
   );
 });
